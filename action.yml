@@ -1,0 +1,20 @@
+name: 'Run Invoke-Build task'
+description: 'Run Invoke-Build tasks using PowerShell 7'
+inputs:
+  task-file:
+    description: 'Path to the file that contains the task'
+    required: true
+  task:
+    description: 'Name of the task to run. If not specified, Invoke-Build will use the default task'
+    required: false
+  version:
+    description: 'Version of Invoke-Build to use'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.task-file }}
+    - ${{ inputs.task }}
+    - ${{ inputs.version }}
