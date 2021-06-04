@@ -1,5 +1,5 @@
-FROM alpine:3.10
+FROM mcr.microsoft.com/powershell:alpine-3.12
 
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.ps1 /entrypoint.ps1
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.ps1"]
