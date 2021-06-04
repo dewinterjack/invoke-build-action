@@ -1,0 +1,11 @@
+on: [push]
+
+jobs:
+  run-action:
+    runs-on: ubuntu-latest
+    name: Runs the Invok-Build GitHub action
+    steps:
+      - name: Hello world action step
+        uses: dewinterjack/invoke-build-action@v0.1.0
+        with:
+          task-file: 'Some file path'
